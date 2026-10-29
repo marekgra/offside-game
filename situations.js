@@ -7,8 +7,7 @@ const situations = [
     passTime: 2,          // the moment the pass is played
     receiver: 1,          // which player gets the pass (position in the players list below, starting from 0)
     answer: "offside",
-    explanation: "When the pass was played, the blue attacker was closer to the goal than the second-last defender, and he received the ball.",
-
+    explanation: "W momencie podania niebieski zawodnik był bliżej bramki niż przedostatni przeciwnik i otrzymał piłkę. To spalony.",
     players: [
       // Attacker with the ball (passer)
       { team: "att", keys: [ {t:0, x:50, y:34}, {t:2, x:55, y:34}, {t:5, x:60, y:36} ] },
@@ -31,8 +30,7 @@ const situations = [
     passTime: 2,
     receiver: 1,
     answer: "onside",
-    explanation: "When the pass was played, the receiver was well behind the second-last defender, so he was in an onside position.",
-
+    explanation: "W momencie podania zawodnik, który otrzymał piłkę, był daleko za przedostatnim przeciwnikiem, więc nie był na spalonym.",
     players: [
       { team: "att", keys: [ {t:0, x:50, y:34}, {t:2, x:55, y:34}, {t:5, x:60, y:34} ] },
       { team: "att", keys: [ {t:0, x:64, y:20}, {t:2, x:68, y:22}, {t:3.5, x:75, y:24}, {t:5, x:80, y:24} ] },
@@ -50,8 +48,7 @@ const situations = [
     passTime: 2,
     receiver: 1,
         answer: "offside",
-    explanation: "When the pass was played, the receiver was slightly ahead of the second-last defender. Even a small difference counts, so he was offside.",
-    
+    explanation: "W momencie podania zawodnik był nieco przed przedostatnim przeciwnikiem. Nawet niewielka różnica się liczy, więc to spalony.",    
     players: [
       { team: "att", keys: [ {t:0, x:52, y:36}, {t:2, x:57, y:36}, {t:5, x:62, y:38} ] },
       { team: "att", keys: [ {t:0, x:77, y:20}, {t:2, x:81, y:22}, {t:3.5, x:84, y:22}, {t:5, x:89, y:25} ] },
@@ -70,8 +67,7 @@ const situations = [
     passTime: 2,
     receiver: 1,
     answer: "onside",
-    explanation: "When the pass was played, the receiver was just behind the second-last defender. It was close, but he was still onside.",
-
+    explanation: "W momencie podania zawodnik był tuż za przedostatnim przeciwnikiem. Było blisko, ale spalonego nie było.",
     players: [
       { team: "att", keys: [ {t:0, x:53, y:34}, {t:2, x:58, y:34}, {t:5, x:63, y:36} ] },
       { team: "att", keys: [ {t:0, x:75, y:46}, {t:2, x:79, y:44}, {t:3.5, x:84, y:40}, {t:5, x:89, y:38} ] },
@@ -90,8 +86,7 @@ const situations = [
     passTime: 2,
     receiver: 1,
     answer: "onside",
-    explanation: "When the pass was played, the receiver was still in his own half. You can't be offside in your own half, even if you are ahead of every defender.",
-
+    explanation: "W momencie podania zawodnik był jeszcze na własnej połowie. Na własnej połowie nie można być na spalonym, nawet jeśli jest się przed wszystkimi obrońcami.",
     players: [
       { team: "att", keys: [ {t:0, x:30, y:34}, {t:2, x:35, y:34}, {t:5, x:40, y:34} ] },
       { team: "att", keys: [ {t:0, x:44, y:26}, {t:2, x:48, y:27}, {t:3.5, x:60, y:28}, {t:5, x:68, y:28} ] },
@@ -110,8 +105,7 @@ const situations = [
     passTime: 2,
     receiver: 1,
     answer: "onside",
-    explanation: "One blue player was in an offside position, but he did not touch the ball or interfere with a defender, and the pass went to a teammate who was onside. Being in an offside position is not an offence by itself.",
-
+    explanation: "Jeden z niebieskich zawodników był na pozycji spalonej, ale nie dotknął piłki i nie przeszkadzał rywalom, a podanie trafiło do kolegi, który spalonego nie miał. Sama pozycja spalona nie jest przewinieniem.",
     players: [
       { team: "att", keys: [ {t:0, x:53, y:34}, {t:2, x:58, y:34}, {t:5, x:63, y:36} ] },
       { team: "att", keys: [ {t:0, x:70, y:42}, {t:2, x:75, y:41}, {t:3.5, x:79, y:40}, {t:5, x:86, y:37} ] },

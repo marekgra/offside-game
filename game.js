@@ -131,7 +131,7 @@ function drawBall(pos) {
 function updateControls() {
   slider.value = (currentTime / situation.duration) * 1000;
   timeLabel.textContent = currentTime.toFixed(1) + " / " + situation.duration.toFixed(1) + " s";
-  playBtn.textContent = playing ? "⏸ Pause" : "▶ Play";
+    playBtn.textContent = playing ? "⏸ Pauza" : "▶ Odtwórz";
 }
 
 // The offside line at the moment of the pass
@@ -163,7 +163,7 @@ function drawOffsideLine() {
   ctx.font = "bold 14px Arial";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.fillText("OFFSIDE LINE", px(x), MARGIN / 2);
+  ctx.fillText("LINIA SPALONEGO", px(x), MARGIN / 2);
 
   ctx.restore();
 }
@@ -213,19 +213,19 @@ function handleAnswer(choice) {
 
   const correct = choice === situation.answer;
   if (correct) score++;
-  feedback.textContent = (correct ? "✅ Correct! " : "❌ Not quite. ") +
-    situation.explanation + " Drag the timeline to look around.";
+  feedback.textContent = (correct ? "✅ Dobrze! " : "❌ Niestety nie. ") +
+  situation.explanation + " Przesuń oś czasu, żeby przyjrzeć się sytuacji.";
   feedback.className = correct ? "good" : "bad";
 
   nextBtn.hidden = false;
-  nextBtn.textContent = currentIndex === situations.length - 1 ? "See result" : "Next situation →";
+    nextBtn.textContent = currentIndex === situations.length - 1 ? "Zobacz wynik" : "Następna sytuacja →";
   updateStatus();
   draw();
 }
 
 function updateStatus() {
-  statusEl.textContent = "Situation " + (currentIndex + 1) + " / " + situations.length +
-    "  ·  Score: " + score;
+  statusEl.textContent = "Sytuacja " + (currentIndex + 1) + " / " + situations.length +
+    "  ·  Wynik: " + score;
 }
 
 // Resets everything and loads situation number i
@@ -290,10 +290,14 @@ nextBtn.addEventListener("click", () => {
     loadSituation(currentIndex + 1);
   } else {                                 // "See result"
     gameOver = true;
-    feedback.textContent = "🏁 Finished! Your score: " + score + " / " + situations.length;
+        feedback.textContent = "🏁 Koniec! Twój wynik: " + score + " / " + situations.length;
     feedback.className = "";
-    nextBtn.textContent = "Play again";
+    nextBtn.textContent = "Zagraj ponownie";
   }
 });
+
+const intro = document.getElementById("intro");
+document.getElementById("startBtn").addEventListener("click", () => intro.classList.add("hidden"));
+document.getElementById("helpBtn").addEventListener("click", () => intro.classList.remove("hidden"));
 
 loadSituation(0);

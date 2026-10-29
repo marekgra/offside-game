@@ -73,3 +73,49 @@ canvas {
   border-radius: 4px;
   font-weight: bold;
 }
+
+#intro {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+#intro.hidden { display: none; }
+
+#intro-card {
+  max-width: 640px;
+  background: #262626;
+  color: white;
+  border-radius: 12px;
+  padding: 28px;
+  text-align: left;
+  line-height: 1.5;
+}
+
+#startBtn {
+  margin-top: 16px;
+  padding: 12px 28px;
+  font-size: 18px;
+  background: #ff9800;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#helpBtn {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+html, body {
+  background: #1b1b1b;
+  color: white;
+}
