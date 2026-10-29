@@ -1,8 +1,10 @@
-css
-body {
-  font-family: Arial, sans-serif;
+html, body {
   background: #1b1b1b;
   color: white;
+}
+
+body {
+  font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
   padding: 20px;
@@ -21,6 +23,17 @@ canvas {
   border-radius: 8px;
 }
 
+/* All buttons: readable colours on every device */
+button {
+  font-family: inherit;
+  background: #f0f0f0;
+  color: #111;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Timeline bar */
 #controls {
   display: flex;
   align-items: center;
@@ -29,29 +42,47 @@ canvas {
   margin: 12px auto 0;
 }
 
-#timeline { flex: 1; }
-
-#playBtn {
-  padding: 8px 16px;
-  font-size: 16px;
-  cursor: pointer;
+#timeline {
+  flex: 1;
+  min-width: 0;
 }
 
+#timeLabel {
+  white-space: nowrap;
+}
+
+#playBtn, #helpBtn {
+  padding: 8px 16px;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+/* Questions and answers */
 #answer-area {
   max-width: 1110px;
-  margin: 6px 8px;
+  margin: 20px auto 0;
+}
+
+#status {
+  opacity: 0.7;
+  margin-bottom: 8px;
 }
 
 #answer-area button {
   padding: 12px 28px;
   font-size: 18px;
-  margin: 0 8px;
-  cursor: pointer;
+  margin: 6px 8px;
 }
 
 #answer-area button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+#nextBtn {
+  background: #ff9800;
+  color: black;
+  font-weight: bold;
 }
 
 #feedback {
@@ -62,39 +93,30 @@ canvas {
 #feedback.good { color: #6fdc6f; }
 #feedback.bad  { color: #ff7b7b; }
 
-#status {
-  opacity: 0.7;
-  margin-bottom: 8px;
-}
-
-#nextBtn {
-  background: #ff9800;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-}
-
+/* Intro screen */
 #intro {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   z-index: 10;
   padding: 20px;
   overflow-y: auto;
 }
 
-#intro.hidden { display: none; }
+#intro.hidden {
+  display: none;
+}
 
 #intro-card {
   max-width: 640px;
+  margin: auto;
   background: #262626;
   color: white;
   border-radius: 12px;
   padding: 28px;
   text-align: left;
   line-height: 1.5;
-  margin: auto;
 }
 
 #startBtn {
@@ -102,26 +124,16 @@ canvas {
   padding: 12px 28px;
   font-size: 18px;
   background: #ff9800;
-  border: none;
-  border-radius: 4px;
+  color: black;
   font-weight: bold;
-  cursor: pointer;
 }
 
-#helpBtn {
-  padding: 8px 16px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-html, body {
-  background: #1b1b1b;
-  color: white;
-}
-
+/* Phones */
 @media (max-width: 600px) {
-  #answer-area button {
-    padding: 10px 16px;
-    font-size: 16px;
-  }
+  body { padding: 12px; }
+  #controls { gap: 8px; }
+  #playBtn, #helpBtn { padding: 8px 10px; font-size: 14px; }
+  #timeLabel { font-size: 13px; }
+  #answer-area button { padding: 10px 16px; font-size: 16px; }
+  #intro-card { padding: 20px; }
 }
