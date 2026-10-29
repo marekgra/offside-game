@@ -128,6 +128,16 @@ button {
   font-weight: bold;
 }
 
+#passRow {
+  margin-top: 10px;
+}
+
+#passBtn {
+  padding: 8px 16px;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
 /* Phones */
 @media (max-width: 600px) {
   body { padding: 12px; }

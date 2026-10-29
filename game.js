@@ -300,4 +300,10 @@ const intro = document.getElementById("intro");
 document.getElementById("startBtn").addEventListener("click", () => intro.classList.add("hidden"));
 document.getElementById("helpBtn").addEventListener("click", () => intro.classList.remove("hidden"));
 
+document.getElementById("passBtn").addEventListener("click", () => {
+  playing = false;
+  currentTime = situation.passTime;   // jump to the moment of the pass
+  draw();
+});
+
 loadSituation(0);
