@@ -1,0 +1,75 @@
+css
+body {
+  font-family: Arial, sans-serif;
+  background: #1b1b1b;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 1110px;
+  margin: 12px auto 0;
+}
+
+#timeline { flex: 1; }
+
+#playBtn {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#answer-area {
+  max-width: 1110px;
+  margin: 20px auto 0;
+}
+
+#answer-area button {
+  padding: 12px 28px;
+  font-size: 18px;
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+#answer-area button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#feedback {
+  font-size: 18px;
+  min-height: 50px;
+}
+
+#feedback.good { color: #6fdc6f; }
+#feedback.bad  { color: #ff7b7b; }
+
+#status {
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+#nextBtn {
+  background: #ff9800;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+}

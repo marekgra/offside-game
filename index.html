@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offside Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Offside Game</h1>
+  <script src="situations.js"></script>
+<canvas id="pitch" width="1110" height="740"></canvas> <div id="controls">
+  <button id="playBtn">▶ Play</button>
+  <input type="range" id="timeline" min="0" max="1000" value="0">
+  <span id="timeLabel">0.0 / 5.0 s</span>
+</div> 
+<div id="answer-area">
+  <p id="status"></p>
+  <p id="question">Watch the pass. Was the player who received it offside when the pass was played?</p>
+  <button id="offsideBtn" disabled>Offside</button>
+  <button id="onsideBtn" disabled>Onside</button>
+  <button id="nextBtn" hidden>Next situation →</button>
+  <p id="feedback"></p>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
